@@ -1,0 +1,11 @@
+
+
+TODO (Development Phase : 20 MEI - 26 Juli 2026)
+1. Buat Story line (chapter 1) : https://docs.google.com/document/d/1cAFQLOeTHyo30HPbHu9XAzr-0dzzJzhGO_jTuYeQzBk/edit?usp=sharing
+2. (After Task 1) Generate gambar untuk asset : (Folder Assets)
+3. Implement assets to GODOT
+
+TODO ASSIGN (Development Phase : 20 MEI - 26 Juli 2026)
+Task 1 (Rifki, Wilson, Reihan)
+Task 2 (Rifki, Wilson, Reihan)
+Task 3 (Wilson, Reihan)
