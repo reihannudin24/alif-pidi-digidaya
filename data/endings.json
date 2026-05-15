@@ -1,0 +1,32 @@
+[
+  {
+    "id": "responsible_redirect",
+    "title": "Responsible Redirect",
+    "summary": "You gathered strong evidence, kept Raka's trust, and redirected him away from the scheme toward safer learning and verification.",
+    "feedback": "Best outcome: you combined risk awareness, sharia reasoning, and careful communication."
+  },
+  {
+    "id": "scam_prevented_relationship_damaged",
+    "title": "Scam Prevented, Relationship Damaged",
+    "summary": "You stopped the transfer, but Raka felt attacked and may hesitate to ask for help next time.",
+    "feedback": "Evidence matters, but trust and tone shape whether people can act on it."
+  },
+  {
+    "id": "too_late",
+    "title": "Too Late",
+    "summary": "The deadline passed before you made a clear recommendation. Raka transferred the money under pressure.",
+    "feedback": "Time pressure is part of the scam pattern. Prioritize the highest-signal evidence earlier."
+  },
+  {
+    "id": "misled_by_hype",
+    "title": "Misled by Hype",
+    "summary": "Dimas's confidence and social proof pushed the recommendation toward joining the scheme.",
+    "feedback": "Guaranteed returns, urgency, and recruitment rewards should trigger caution, not excitement."
+  },
+  {
+    "id": "partial_understanding",
+    "title": "Partial Understanding",
+    "summary": "You avoided the scheme, but the explanation was incomplete or lacked stronger sharia reasoning.",
+    "feedback": "Replay to connect risk evidence with concepts like gharar, maysir, and transparent profit-loss sharing."
+  }
+]

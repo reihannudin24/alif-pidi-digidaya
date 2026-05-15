@@ -1,0 +1,18 @@
+{
+  "raka": [
+    { "from": "08:00", "to": "09:30", "location": "home" },
+    { "from": "09:30", "to": "12:00", "location": "campus_cafe" },
+    { "from": "12:00", "to": "16:00", "location": "home" }
+  ],
+  "naya": [
+    { "from": "09:00", "to": "12:00", "location": "campus_cafe" },
+    { "from": "12:00", "to": "16:00", "location": "home" }
+  ],
+  "dimas": [
+    { "from": "10:00", "to": "14:00", "location": "coworking_space" },
+    { "from": "14:00", "to": "16:00", "location": "campus_cafe" }
+  ],
+  "ustadz_farid": [
+    { "from": "11:00", "to": "16:00", "location": "bank_syariah" }
+  ]
+}

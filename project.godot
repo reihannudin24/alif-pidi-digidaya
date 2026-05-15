@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="alif"
+run/main_scene="res://scenes/Main.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+DataLoader="*res://scripts/DataLoader.gd"
+GameState="*res://scripts/GameState.gd"
+TimeManager="*res://scripts/TimeManager.gd"
+DialogueManager="*res://scripts/DialogueManager.gd"
+NPCManager="*res://scripts/NPCManager.gd"
+EvidenceManager="*res://scripts/EvidenceManager.gd"
+RiskScoreManager="*res://scripts/RiskScoreManager.gd"
+ShariaComplianceManager="*res://scripts/ShariaComplianceManager.gd"
+EndingEvaluator="*res://scripts/EndingEvaluator.gd"
+SaveManager="*res://scripts/SaveManager.gd"
+
+[dotnet]
+
+project/assembly_name="alif"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

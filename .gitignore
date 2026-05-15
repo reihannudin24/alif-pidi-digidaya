@@ -1,0 +1,25 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# OS/editor noise
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+
+# AI/reference workspaces and local agent settings
+.codex/
+.claude/
+.agents/
+.gemini/
+agent-sprite-forge/
+ai-game-spritesheets/
+ai-pixel-snapped-game-sprites/
+vibe-isometric-sprites/
+
+# Planning/prompt documents should not be pushed.
+*.md
+
+# Raw generated source captures; keep only final game-ready assets.
+assets/portraits/source_generated/

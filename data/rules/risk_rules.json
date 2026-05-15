@@ -1,0 +1,8 @@
+[
+  { "tag": "unrealistic_return", "label": "Guaranteed or unrealistic high return", "weight": 3 },
+  { "tag": "pressure", "label": "Urgency manipulation", "weight": 2 },
+  { "tag": "legal", "label": "Missing authority registration", "weight": 3 },
+  { "tag": "pyramid_like", "label": "Referral-focused profit", "weight": 3 },
+  { "tag": "business_model", "label": "Unclear business activity", "weight": 2 },
+  { "tag": "guaranteed_return", "label": "Risk-free return claim", "weight": 3 }
+]

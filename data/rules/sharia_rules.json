@@ -1,0 +1,23 @@
+{
+  "gharar": {
+    "answer": "Gharar means excessive uncertainty in a transaction. In this case, vague business reports, unclear akad terms, and unclear ownership make the player ask: what exactly is being bought, sold, or shared?"
+  },
+  "maysir": {
+    "answer": "Maysir is gambling-like gain from chance or speculation. A structure where rewards depend mostly on recruiting others instead of real economic activity can create maysir-like concerns."
+  },
+  "riba": {
+    "answer": "Riba refers to prohibited interest/usury. This prototype does not issue a real ruling; it teaches players to check whether returns are tied to a valid trade or partnership rather than a guaranteed money-for-money increase."
+  },
+  "musyarakah": {
+    "answer": "Musyarakah is a partnership where parties share profit according to agreement and losses according to capital contribution. The akad should clearly explain capital, business activity, profit sharing, and loss responsibility."
+  },
+  "sukuk": {
+    "answer": "Sukuk are Islamic finance instruments commonly linked to underlying assets or projects. They still have risks, but legitimate offerings should provide clearer documentation and disclosures."
+  },
+  "cwls": {
+    "answer": "Cash Waqf Linked Sukuk combines waqf/social benefit goals with sukuk structures. The learning point is transparency: purpose, issuer, risk, and use of funds should be clear."
+  },
+  "scam_red_flags": {
+    "answer": "Scam red flags include guaranteed high returns, unclear business model, pressure to decide quickly, recruitment-based payouts, missing registration, and vague contract terms."
+  }
+}

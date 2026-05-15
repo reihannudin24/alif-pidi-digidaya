@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://alif_dialogue_box"]
+
+[node name="DialogueBox" type="PanelContainer"]
+

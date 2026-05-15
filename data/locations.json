@@ -1,0 +1,22 @@
+[
+  {
+    "id": "home",
+    "name": "Home",
+    "description": "Raka's family home. The financial pressure feels personal here."
+  },
+  {
+    "id": "campus_cafe",
+    "name": "Campus Cafe",
+    "description": "Students talk about trends, side hustles, and investment tips."
+  },
+  {
+    "id": "coworking_space",
+    "name": "Coworking Space",
+    "description": "Dimas hosts his investment presentation here."
+  },
+  {
+    "id": "bank_syariah",
+    "name": "Bank Syariah",
+    "description": "A place to verify alternatives and learn safer financial concepts."
+  }
+]

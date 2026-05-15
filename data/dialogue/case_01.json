@@ -1,0 +1,350 @@
+{
+  "case_id": "case_01",
+  "title": "The 30% Monthly Return",
+  "nodes": [
+    {
+      "id": "intro",
+      "speaker": "system",
+      "text": "08:00. Raka forwards you an investment pitch promising 30% monthly returns. He plans to transfer money before 16:00 unless you can help him think clearly.",
+      "choices": [
+        {
+          "text": "Start by checking the message at home.",
+          "effects": { "set_flags": ["case_started"] },
+          "next": "raka_home_start"
+        }
+      ]
+    },
+    {
+      "id": "raka_home_start",
+      "speaker": "raka",
+      "conditions": { "location": "home", "time_min": "08:00", "time_max": "10:00" },
+      "text": "Kak, Dimas says this group is funding halal SMEs. Thirty percent monthly sounds like the answer to everything. If I wait, the slot is gone.",
+      "choices": [
+        {
+          "text": "Ask why the return is so high.",
+          "effects": {
+            "add_scores": { "risk_awareness_score": 1 },
+            "add_trust": { "raka": 1 },
+            "collect_evidence": ["profit_screenshot"],
+            "advance_time": 10
+          },
+          "next": "raka_return_question"
+        },
+        {
+          "text": "Tell him it is obviously fake.",
+          "effects": {
+            "add_scores": { "risk_awareness_score": 1 },
+            "add_trust": { "raka": -1 },
+            "collect_evidence": ["urgent_deadline_message"],
+            "advance_time": 10
+          },
+          "next": "raka_defensive"
+        },
+        {
+          "text": "Maybe Dimas knows what he is doing.",
+          "effects": {
+            "add_dimas_pressure": 2,
+            "risk_tags": ["trusted_hype"],
+            "advance_time": 10
+          },
+          "next": "raka_more_excited"
+        }
+      ]
+    },
+    {
+      "id": "raka_return_question",
+      "speaker": "raka",
+      "text": "He says the business is special and members get priority profit. I do not really understand the akad yet.",
+      "choices": [
+        {
+          "text": "Suggest verifying the akad and registration before any transfer.",
+          "effects": {
+            "set_flags": ["raka_agrees_to_verify"],
+            "add_trust": { "raka": 1 },
+            "add_scores": { "literacy_score": 1 },
+            "advance_time": 10
+          },
+          "next": "system_next_steps"
+        }
+      ]
+    },
+    {
+      "id": "raka_defensive",
+      "speaker": "raka",
+      "text": "You do not have to mock me. I just want to help the family.",
+      "choices": [
+        {
+          "text": "Apologize and focus on checking facts together.",
+          "effects": {
+            "add_trust": { "raka": 1 },
+            "set_flags": ["repaired_raka_tone"],
+            "advance_time": 10
+          },
+          "next": "system_next_steps"
+        }
+      ]
+    },
+    {
+      "id": "raka_more_excited",
+      "speaker": "raka",
+      "text": "Exactly. Dimas has screenshots from people who already got paid. I am leaning toward joining.",
+      "choices": [
+        {
+          "text": "Slow down and investigate anyway.",
+          "effects": {
+            "add_scores": { "risk_awareness_score": 1 },
+            "advance_time": 10
+          },
+          "next": "system_next_steps"
+        }
+      ]
+    },
+    {
+      "id": "system_next_steps",
+      "speaker": "system",
+      "text": "You have until 16:00. Naya may know what happens after someone joins. Dimas is presenting at the coworking space later. Bank Syariah can help explain legitimate alternatives.",
+      "choices": []
+    },
+    {
+      "id": "naya_cafe_start",
+      "speaker": "naya",
+      "conditions": { "location": "campus_cafe", "time_min": "09:00", "time_max": "12:30" },
+      "text": "Raka told you? I joined last month. It looked real at first. Please do not tell everyone.",
+      "choices": [
+        {
+          "text": "Ask gently whether she managed to withdraw.",
+          "effects": {
+            "reveal_evidence": ["naya_withdrawal_delay"],
+            "add_trust": { "naya": 1 },
+            "add_scores": { "risk_awareness_score": 1 },
+            "advance_time": 10
+          },
+          "next": "naya_withdrawal"
+        },
+        {
+          "text": "Pressure her to admit it was a scam.",
+          "effects": {
+            "add_trust": { "naya": -1 },
+            "advance_time": 10
+          },
+          "next": "naya_closes_up"
+        }
+      ]
+    },
+    {
+      "id": "naya_withdrawal",
+      "speaker": "naya",
+      "text": "I tried to withdraw. They said the system was busy and then asked me to invite two friends first. I saved the chat.",
+      "choices": [
+        {
+          "text": "Collect Naya's withdrawal proof.",
+          "requires": { "visible_evidence": ["naya_withdrawal_delay"] },
+          "effects": {
+            "collect_evidence": ["naya_withdrawal_delay"],
+            "reveal_evidence": ["dimas_voice_note"],
+            "advance_time": 10
+          },
+          "next": "naya_voice_note"
+        }
+      ]
+    },
+    {
+      "id": "naya_voice_note",
+      "speaker": "naya",
+      "text": "Dimas also sent a voice note saying returns are guaranteed if we do not panic. That sounded wrong after I thought about it.",
+      "choices": [
+        {
+          "text": "Save the guaranteed-return voice note.",
+          "effects": {
+            "collect_evidence": ["dimas_voice_note"],
+            "add_scores": { "risk_awareness_score": 1 },
+            "advance_time": 10
+          },
+          "next": "system_continue_investigation"
+        }
+      ]
+    },
+    {
+      "id": "naya_closes_up",
+      "speaker": "naya",
+      "text": "Forget it. I should not have said anything.",
+      "choices": []
+    },
+    {
+      "id": "dimas_pitch_start",
+      "speaker": "dimas",
+      "conditions": { "location": "coworking_space", "time_min": "10:00", "time_max": "14:30" },
+      "text": "You are early. Smart people move before the crowd. Our members help halal businesses and receive consistent monthly returns.",
+      "choices": [
+        {
+          "text": "Ask for registration and audited business reports.",
+          "effects": {
+            "reveal_evidence": ["missing_ojk_registration"],
+            "add_scores": { "risk_awareness_score": 1 },
+            "add_trust": { "raka": 1 },
+            "advance_time": 10
+          },
+          "next": "dimas_evasive"
+        },
+        {
+          "text": "Praise the pitch and ask how to join fast.",
+          "effects": {
+            "add_dimas_pressure": 2,
+            "risk_tags": ["trusted_hype"],
+            "advance_time": 10
+          },
+          "next": "dimas_pushes_join"
+        }
+      ]
+    },
+    {
+      "id": "dimas_evasive",
+      "speaker": "dimas",
+      "text": "Registration is being processed. The important thing is trust and speed. If you wait for paperwork, you miss the blessing.",
+      "choices": [
+        {
+          "text": "Collect the missing-registration clue.",
+          "requires": { "visible_evidence": ["missing_ojk_registration"] },
+          "effects": {
+            "collect_evidence": ["missing_ojk_registration"],
+            "advance_time": 10
+          },
+          "next": "dimas_contract"
+        },
+        {
+          "text": "Collect the pitch materials on the table.",
+          "effects": {
+            "collect_evidence": ["unclear_akad_document", "referral_bonus_chart", "business_activity_claim"],
+            "advance_time": 20
+          },
+          "next": "dimas_contract"
+        }
+      ]
+    },
+    {
+      "id": "dimas_contract",
+      "speaker": "system",
+      "text": "The materials use phrases like profit sharing, but the actual terms are vague. The referral chart is clearer than the business model.",
+      "choices": []
+    },
+    {
+      "id": "dimas_pushes_join",
+      "speaker": "dimas",
+      "text": "Good. Bring Raka and I will keep one slot. Do not overthink. Winners move.",
+      "choices": []
+    },
+    {
+      "id": "ustadz_bank_start",
+      "speaker": "ustadz_farid",
+      "conditions": { "location": "bank_syariah", "time_min": "11:00", "time_max": "16:00" },
+      "text": "We can discuss principles, not issue a personal ruling. Start with transparency: what is the akad, where is the money used, who bears loss, and what evidence supports the profit claim?",
+      "choices": [
+        {
+          "text": "Ask about gharar in unclear investment contracts.",
+          "effects": {
+            "add_scores": { "sharia_compliance_score": 1, "literacy_score": 1 },
+            "collect_evidence": ["musyarakah_explanation_note"],
+            "advance_time": 10
+          },
+          "next": "ustadz_gharar"
+        },
+        {
+          "text": "Ask about legitimate alternatives.",
+          "effects": {
+            "add_scores": { "sharia_compliance_score": 1, "literacy_score": 1 },
+            "collect_evidence": ["sukuk_alternative_brochure"],
+            "advance_time": 10
+          },
+          "next": "ustadz_alternatives"
+        }
+      ]
+    },
+    {
+      "id": "ustadz_gharar",
+      "speaker": "ustadz_farid",
+      "text": "If profit, loss, business activity, and ownership are unclear, the uncertainty is not just paperwork. It changes the ethical quality of the decision.",
+      "choices": [
+        {
+          "text": "Note that proper musyarakah requires clear profit-loss sharing.",
+          "effects": {
+            "add_scores": { "sharia_compliance_score": 1, "literacy_score": 1 },
+            "advance_time": 5
+          },
+          "next": "system_continue_investigation"
+        }
+      ]
+    },
+    {
+      "id": "ustadz_alternatives",
+      "speaker": "ustadz_farid",
+      "text": "Alternatives like sukuk or CWLS are not magic and still carry risk, but legitimate products should explain issuer, use of funds, risk, and rights more clearly.",
+      "choices": [
+        {
+          "text": "Prepare to explain this to Raka.",
+          "effects": {
+            "add_trust": { "raka": 1 },
+            "advance_time": 5
+          },
+          "next": "system_continue_investigation"
+        }
+      ]
+    },
+    {
+      "id": "system_continue_investigation",
+      "speaker": "system",
+      "text": "The evidence is building. When ready, make a final recommendation before 16:00.",
+      "choices": []
+    },
+    {
+      "id": "raka_final_check",
+      "speaker": "raka",
+      "conditions": { "location": "home", "time_min": "13:00", "time_max": "16:00" },
+      "text": "Dimas keeps messaging me. What should I do?",
+      "choices": [
+        {
+          "text": "Tell him you are ready to make the final recommendation.",
+          "effects": { "advance_time": 5 },
+          "next": "final_recommendation"
+        }
+      ]
+    },
+    {
+      "id": "final_recommendation",
+      "speaker": "system",
+      "text": "Choose your recommendation for Raka. This determines the ending together with evidence, trust, risk awareness, and sharia reasoning.",
+      "choices": [
+        {
+          "text": "Join the scheme.",
+          "effects": { "final_recommendation": "join_scheme" },
+          "next": "ending_now"
+        },
+        {
+          "text": "Avoid the scheme because it is too risky.",
+          "effects": { "final_recommendation": "avoid_risky" },
+          "next": "ending_now"
+        },
+        {
+          "text": "Avoid it and consider legitimate Islamic finance alternatives.",
+          "effects": { "final_recommendation": "avoid_with_alternative" },
+          "next": "ending_now"
+        },
+        {
+          "text": "Delay until registration, business reports, and akad are verified.",
+          "effects": { "final_recommendation": "delay_verify" },
+          "next": "ending_now"
+        },
+        {
+          "text": "Report the concern and warn others carefully.",
+          "effects": { "final_recommendation": "report_and_warn" },
+          "next": "ending_now"
+        }
+      ]
+    },
+    {
+      "id": "ending_now",
+      "speaker": "system",
+      "text": "Your recommendation is recorded. Open the ending screen through the deadline or continue to review the result.",
+      "choices": []
+    }
+  ]
+}

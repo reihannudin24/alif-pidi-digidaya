@@ -1,0 +1,102 @@
+[
+  {
+    "id": "profit_screenshot",
+    "title": "30% Monthly Return Screenshot",
+    "description": "A promotional screenshot promises 30% monthly returns, far above ordinary business expectations.",
+    "location": "home",
+    "initial_state": "visible",
+    "tags": ["risk", "unrealistic_return"],
+    "risk_weight": 3,
+    "sharia_relevance": ["gharar"]
+  },
+  {
+    "id": "urgent_deadline_message",
+    "title": "Urgent Deadline Message",
+    "description": "Dimas says the deposit must be made before 16:00 today or the slot will disappear.",
+    "location": "home",
+    "initial_state": "visible",
+    "tags": ["risk", "pressure"],
+    "risk_weight": 2,
+    "sharia_relevance": []
+  },
+  {
+    "id": "missing_ojk_registration",
+    "title": "Missing Registration",
+    "description": "No valid authority registration can be verified from the scheme's materials.",
+    "location": "coworking_space",
+    "initial_state": "hidden",
+    "tags": ["risk", "legal"],
+    "risk_weight": 3,
+    "sharia_relevance": ["gharar"]
+  },
+  {
+    "id": "unclear_akad_document",
+    "title": "Unclear Akad Document",
+    "description": "The contract uses religious language but does not clearly define capital, risk, profit sharing, or loss sharing.",
+    "location": "coworking_space",
+    "initial_state": "visible",
+    "tags": ["sharia", "contract"],
+    "risk_weight": 2,
+    "sharia_relevance": ["gharar", "musyarakah"]
+  },
+  {
+    "id": "referral_bonus_chart",
+    "title": "Referral Bonus Chart",
+    "description": "Most rewards come from inviting new members, not verified business profit.",
+    "location": "coworking_space",
+    "initial_state": "visible",
+    "tags": ["risk", "pyramid_like"],
+    "risk_weight": 3,
+    "sharia_relevance": ["maysir"]
+  },
+  {
+    "id": "naya_withdrawal_delay",
+    "title": "Naya's Withdrawal Delay",
+    "description": "Naya attempted to withdraw her funds but received repeated delay excuses.",
+    "location": "campus_cafe",
+    "initial_state": "hidden",
+    "tags": ["risk", "testimony", "liquidity_issue"],
+    "risk_weight": 3,
+    "sharia_relevance": []
+  },
+  {
+    "id": "dimas_voice_note",
+    "title": "Guaranteed Return Voice Note",
+    "description": "Dimas says the return is guaranteed and risk-free if Raka joins today.",
+    "location": "campus_cafe",
+    "initial_state": "hidden",
+    "tags": ["risk", "guaranteed_return"],
+    "risk_weight": 3,
+    "sharia_relevance": ["gharar"]
+  },
+  {
+    "id": "business_activity_claim",
+    "title": "Unverified SME Funding Claim",
+    "description": "The scheme claims to fund halal SMEs but provides no verifiable business report.",
+    "location": "coworking_space",
+    "initial_state": "visible",
+    "tags": ["risk", "business_model"],
+    "risk_weight": 2,
+    "sharia_relevance": ["gharar"]
+  },
+  {
+    "id": "sukuk_alternative_brochure",
+    "title": "Sukuk Alternative Brochure",
+    "description": "A legitimate Islamic finance alternative with clearer disclosures and different risks.",
+    "location": "bank_syariah",
+    "initial_state": "visible",
+    "tags": ["education", "sukuk"],
+    "risk_weight": 0,
+    "sharia_relevance": ["sukuk"]
+  },
+  {
+    "id": "musyarakah_explanation_note",
+    "title": "Musyarakah Explanation Note",
+    "description": "A note explaining partnership-based profit and loss sharing, including the need for transparent terms.",
+    "location": "bank_syariah",
+    "initial_state": "visible",
+    "tags": ["education", "musyarakah"],
+    "risk_weight": 0,
+    "sharia_relevance": ["musyarakah"]
+  }
+]
